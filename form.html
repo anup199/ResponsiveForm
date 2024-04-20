@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+ <link rel="stylesheet" href="style.css">
+  <body>
+    <div class="form" id="status">
+        <div>
+      <label for="name">Username</label>
+      <input type="text" name="name" id="name" class="input" placeholder="Username" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="pwd" id="pswd" class="input" placeholder="Password"/>
+    </div>
+    <div class="btn">
+      <input type="submit" value="Submit" onclick="myFunction()" />
+    </div>
+    </div>
+
+    <div class="content">
+      <p id="namelist"></p>
+    </div>
+    <script>
+      function myFunction() {
+        var name = document.getElementById("name").value;
+        var pswd = document.getElementById("pswd").value;
+        let show = document.getElementById("namelist");
+        // name.innerHTML += "<li>"+document.getElementById("demo").value+"</li>";
+
+        if (name == "Anup" || name == "anup" && pswd == 9876) {
+          show.innerHTML = "<div class='success'>" + "Login Successfully" + "</div>";
+        } else {
+          show.innerHTML = "<div class='failed'>" + "Login Failed" + "</div>";
+        }
+      }
+
+    </script>
+  </body>
+</html>
