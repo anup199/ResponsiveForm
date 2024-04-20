@@ -5,39 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="form.css" />
   <body>
-    <div class="form" id="status">
-        <div>
-      <label for="name">Username</label>
-      <input type="text" name="name" id="name" class="input" placeholder="Username" />
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" name="pwd" id="pswd" class="input" placeholder="Password"/>
-    </div>
-    <div class="btn">
-      <input type="submit" value="Submit" onclick="myFunction()" />
-    </div>
-    </div>
+    <div class="container">
+      <div class="form" id="status1">
+        <div class="status">
+          <label for="name">Username</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="input"
+            placeholder="Username"
+          />
+        </div>
 
+        <div class="status">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="pwd"
+            id="pswd"
+            class="input"
+            placeholder="Password"
+          />
+        </div>
+
+        <div class="btn">
+          <input
+            type="submit"
+            value="Submit"
+            onclick="myFunction()"
+            class="status input"
+          />
+        </div>
+      </div>
+    </div>
     <div class="content">
       <p id="namelist"></p>
     </div>
     <script>
       function myFunction() {
-        var name = document.getElementById("name").value;
-        var pswd = document.getElementById("pswd").value;
+        // let st = document.getElementsByClassName("status");
+        const collection = document.getElementsByClassName("input");
+        const collect1 = document.getElementById("status1");
+        const name = document.getElementById("name").value;
+        const pswd = document.getElementById("pswd").value;
         let show = document.getElementById("namelist");
         // name.innerHTML += "<li>"+document.getElementById("demo").value+"</li>";
 
-        if (name == "Anup" || name == "anup" && pswd == 9876) {
-          show.innerHTML = "<div class='success'>" + "Login Successfully" + "</div>";
+        if (name == "Anup" || (name == "anup" && pswd == 9876)) {
+          show.innerHTML =
+            "<div class='success'>" + "Login Successfully" + "</div>";
+          for (let i = 0; i < collection.length; i++) {
+            collection[i].style.border = "2px solid green";
+          }
+          collect1.style.border = "2px solid green";
         } else {
           show.innerHTML = "<div class='failed'>" + "Login Failed" + "</div>";
+          for (let i = 0; i < collection.length; i++) {
+            collection[i].style.border = "2px solid red";
+          }
+          collect1.style.border = "2px solid red";
         }
+        
       }
-
     </script>
+
+    <script></script>
   </body>
 </html>
